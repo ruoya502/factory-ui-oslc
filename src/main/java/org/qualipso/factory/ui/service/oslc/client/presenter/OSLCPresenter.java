@@ -169,15 +169,15 @@ public class OSLCPresenter implements EntryPoint {
     }
     
     public void paddingTextArea(Results results){
-    	String contents = "allCount        "+results.getAllCount();
-    	contents += "\n" + "srcCount         "+results.getSrcCount();
-    	contents += "\n" + "licensesCount         "+results.getLicensesCount();
-    	contents += "\n" + "disLicensesCount         "+results.getDisLicensesCount();
-    	contents += "\n" + "confRefCount         "+results.getConfRefCount();
-    	contents += "\n" + "confGblCount         "+results.getConfGblCount();
-    	contents += "\n" + "copyRightHolders         "+results.getCopyRightHolders();
-    	contents += "\n" + "copyRightedFiles         "+results.getCopyRightedFiles();
-    	contents += "\n" + "unknownCount         "+results.getUnknownCount();
+    	String contents = "All files: "+results.getAllCount();
+    	contents += "\n" + "Source files: "+results.getSrcCount();
+//    	contents += "\n" + "licensesCount: "+results.getLicensesCount();
+    	contents += "\n" + "Distinct licenses: "+results.getDisLicensesCount();
+    	contents += "\n" + "Conflicts (reference): "+results.getConfRefCount();
+    	contents += "\n" + "Conflicts (global): "+results.getConfGblCount();
+    	contents += "\n" + "Copyright holders: "+results.getCopyRightHolders();
+    	contents += "\n" + "Copyrighted files: "+results.getCopyRightedFiles();
+//    	contents += "\n" + "unknownCount         "+results.getUnknownCount();
     	
     	displayResultsView.setNumbersDisplayValue(contents);
     }

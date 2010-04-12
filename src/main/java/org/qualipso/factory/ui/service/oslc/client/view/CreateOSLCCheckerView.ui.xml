@@ -22,7 +22,7 @@
 			<g:FlowPanel styleName='{resources.style.createfieldbox}'>
 				<g:FlowPanel>
 					<g:Label ui:field="newSVNPathLabel" styleName='{resources.style.fieldlabel} {resources.style.iconRequired} {resources.style.fieldlabelrequired}'>SVN path</g:Label>
-					<g:TextBox ui:field="newSVNPathTextBox" styleName='{resources.style.fieldlarge} {resources.style.fielddata}'></g:TextBox>
+					<g:TextBox ui:field="newSVNPathTextBox" styleName='{resources.style.fieldlarge} {resources.style.fielddata}'>svn://scm.gforge.inria.fr/svn/qualipso/trunk/factory-ui/factory-ui-service-git</g:TextBox>
 					<g:Label ui:field="newSVNPathLegendLabel" styleName='{resources.style.fieldlegend}'></g:Label>
 				</g:FlowPanel>
 				<g:FlowPanel>

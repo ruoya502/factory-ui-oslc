@@ -23,7 +23,7 @@
   				</g:tab>
   				<g:tab>
     				<g:customHeader size='14'>
-      					<g:Label>ConflictingFiles</g:Label>
+      					<g:Label>Conflicting files</g:Label>
     				</g:customHeader>
     				<g:ScrollPanel>
     					<g:Grid  borderWidth="1" ui:field="ConflictingFiles" width="600px"></g:Grid>
@@ -31,7 +31,7 @@
   				</g:tab>
   				<g:tab>
     				<g:customHeader size='14'>
-      					<g:Label>UncertainLicensesFiles</g:Label>
+      					<g:Label>Uncertain licenses files</g:Label>
     				</g:customHeader>
     				<g:ScrollPanel>
     					<g:Grid  borderWidth="1"  cellSpacing="1" ui:field="UncertainLicensesFiles" width="600px" ></g:Grid>
@@ -39,7 +39,7 @@
   				</g:tab>
   				<g:tab>
     				<g:customHeader size='14'>
-      					<g:Label>MissingLicenseFiles</g:Label>
+      					<g:Label>Unlicensed files</g:Label>
     				</g:customHeader>
     				<g:ScrollPanel>
     					<g:Grid  borderWidth="1" cellPadding="1" cellSpacing="1" ui:field="MissingLicenseFiles" width="600px"></g:Grid>
