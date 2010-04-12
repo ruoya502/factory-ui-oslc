@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+		Authors Jerome Blanchard <jayblanc@gmail.com> - Christophe Bouthier <christophe.bouthier@loria.fr>
+		Date 6 November 2009
+	-->
+<web-fragment>
+	<name>FactoryUiServiceOSLC</name>
+	<servlet>
+		<display-name>OSLCServlet</display-name>
+		<servlet-name>OSLCServlet</servlet-name>
+		<servlet-class>org.qualipso.factory.ui.service.oslc.server.OSLCServletImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>OSLCServlet</servlet-name>
+		<url-pattern>/oslc/oslc</url-pattern>
+	</servlet-mapping>
+</web-fragment>

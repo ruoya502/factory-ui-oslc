@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+		Authors Jerome Blanchard <jayblanc@gmail.com> - Christophe Bouthier <christophe.bouthier@loria.fr> 
+		Date 6 November 2009
+	-->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+
+	<display-name>Factory UI OSLC service test</display-name>
+
+	<servlet>
+		<display-name>OSLCServlet</display-name>
+		<servlet-name>OSLCServlet</servlet-name>
+		<servlet-class>org.qualipso.factory.ui.service.oslc.server.OSLCServletImpl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>OSLCServlet</servlet-name>
+		<url-pattern>/oslc/oslc</url-pattern>
+	</servlet-mapping>
+
+</web-app>

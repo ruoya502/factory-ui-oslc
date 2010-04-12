@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://google-web-toolkit.googlecode.com/files/xhtml.ent">
+	<!--
+		Authors Jerome Blanchard <jayblanc@gmail.com> - Christophe Bouthier <christophe.bouthier@loria.fr> 
+		Date 16 December 2009
+	-->
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	
+	<ui:with field='resources' type='org.qualipso.factory.ui.service.oslc.client.resources.OSLCResources' />
+	
+	<g:FlowPanel styleName='{resources.style.bodybox}'>
+		<g:Label ui:field="newProjectLoadingLabel" styleName="{resources.style.loading}"/>
+		<g:FlowPanel styleName='{resources.style.headbox}'>
+			<g:Label ui:field="newProjectTitleLabel" styleName='{resources.style.title} {resources.style.iconProject}'>Open the OSLC Checker!</g:Label>
+		</g:FlowPanel>
+		<g:FlowPanel styleName='{resources.style.createformbox}'>
+			<g:FlowPanel styleName='{resources.style.createinfobox}'>
+				<g:Label ui:field="newProjectInfoLabel" styleName='{resources.style.info}'>Check your Open Source code with OSLC!</g:Label>
+				<g:Label ui:field="newProjectMessageLabel" styleName='{resources.style.message}'></g:Label>
+			</g:FlowPanel>
+			
+			<g:FlowPanel styleName='{resources.style.createfieldbox}'>
+				<g:FlowPanel>
+					<g:Label ui:field="newSVNPathLabel" styleName='{resources.style.fieldlabel} {resources.style.iconRequired} {resources.style.fieldlabelrequired}'>SVNPath</g:Label>
+					<g:TextBox ui:field="newSVNPathTextBox" styleName='{resources.style.fieldlarge} {resources.style.fielddata}'></g:TextBox>
+					<g:Label ui:field="newSVNPathLegendLabel" styleName='{resources.style.fieldlegend}'></g:Label>
+				</g:FlowPanel>
+				<g:FlowPanel>
+					<g:Label ui:field="newUserNameLabel" styleName='{resources.style.fieldlabel} {resources.style.iconRequired} {resources.style.fieldlabelrequired}'>UserName</g:Label>
+					<g:TextBox ui:field="newUserNameTextBox" styleName='{resources.style.fieldnormal} {resources.style.fielddata}'></g:TextBox>
+					<g:Label ui:field="newUserNameLegendLabel" styleName='{resources.style.fieldlegend}'></g:Label>
+				</g:FlowPanel>
+				<g:FlowPanel>
+					<g:Label ui:field="newPWDLabel" styleName='{resources.style.fieldlabel} {resources.style.iconRequired} {resources.style.fieldlabelrequired}'>Password</g:Label>
+					<g:PasswordTextBox ui:field="newPWDTextBox" styleName='{resources.style.fieldnormal} {resources.style.fielddata}'></g:PasswordTextBox>
+					<g:Label ui:field="newPWDLegendLabel" styleName='{resources.style.fieldlegend}'></g:Label>
+				</g:FlowPanel>	
+			</g:FlowPanel>
+			
+			<g:FlowPanel styleName='{resources.style.createbuttonbox}'>
+				<g:Button ui:field="OSLCButton" styleName='{resources.style.button} {resources.style.buttonforward}'>Checker</g:Button>
+			</g:FlowPanel>	
+		</g:FlowPanel>
+	</g:FlowPanel>
+</ui:UiBinder> 
