@@ -27,8 +27,8 @@ import com.google.gwt.resources.client.CssResource;
 /**
  * Project css classes methods.
  * 
- * @author Jerome Blanchard <jayblanc@gmail.com>
- * @date 16 December 2009
+ * @author Huihui Yang <yhh.ruoya@gmail.com>
+ * @date 14 April 2010
  */
 public interface Style extends CssResource {
     String iconProject();

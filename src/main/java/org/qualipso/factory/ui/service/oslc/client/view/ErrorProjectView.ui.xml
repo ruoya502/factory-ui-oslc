@@ -1,4 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+	<!--
+		Authors Huihui Yang <yhh.ruoya@gmail.com> 
+		Date 14 April 2010
+	-->
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
 
 	<ui:with field='resources' type='org.qualipso.factory.ui.service.oslc.client.resources.OSLCResources' />

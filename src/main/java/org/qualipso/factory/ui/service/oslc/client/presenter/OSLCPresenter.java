@@ -44,8 +44,8 @@ import com.google.gwt.user.client.ui.Widget;
 /**
  * OSLC.
  * 
- * @author Jerome Blanchard <jayblanc@gmail.com>
- * @date 16 December 2009
+ * @author Huihui Yang <yhh.ruoya@gmail.com>
+ * @date 14 April 2010
  */
 @OPServiceName("oslc")
 public class OSLCPresenter implements EntryPoint {
@@ -171,13 +171,11 @@ public class OSLCPresenter implements EntryPoint {
     public void paddingTextArea(Results results){
     	String contents = "All files: "+results.getAllCount();
     	contents += "\n" + "Source files: "+results.getSrcCount();
-//    	contents += "\n" + "licensesCount: "+results.getLicensesCount();
     	contents += "\n" + "Distinct licenses: "+results.getDisLicensesCount();
     	contents += "\n" + "Conflicts (reference): "+results.getConfRefCount();
     	contents += "\n" + "Conflicts (global): "+results.getConfGblCount();
     	contents += "\n" + "Copyright holders: "+results.getCopyRightHolders();
     	contents += "\n" + "Copyrighted files: "+results.getCopyRightedFiles();
-//    	contents += "\n" + "unknownCount         "+results.getUnknownCount();
     	
     	displayResultsView.setNumbersDisplayValue(contents);
     }

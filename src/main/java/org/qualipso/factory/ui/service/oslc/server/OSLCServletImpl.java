@@ -39,8 +39,8 @@ import com.google.gwt.rpc.server.RpcServlet;
 /**
  * OSLC servlet.
  * 
- * @author Jerome Blanchard <jayblanc@gmail.com>
- * @date 16 December 2009
+ * @author Huihui Yang <yhh.ruoya@gmail.com>
+ * @date 14 April 2010
  */
 @SuppressWarnings("serial")
 public class OSLCServletImpl extends RpcServlet implements OSLCServlet {
@@ -81,11 +81,11 @@ public class OSLCServletImpl extends RpcServlet implements OSLCServlet {
 		localResults.setCopyRightedFiles(results.getCopyRightedFiles());
 		localResults.setCopyRightHolders(results.getCopyRightHolders());
 		localResults.setDisLicensesCount(results.getDisLicensesCount());
-		localResults.setLicensesCount(results.getLicensesCount());
+		localResults.setLicenseFileCount(results.getLicenseFileCount());
 		localResults.setMissingLicenseFiles(results.getMissingLicenseFiles());
 		localResults.setSrcCount(results.getSrcCount());
 		localResults.setUncertainLicensesFiles(results.getUncertainLicensesFiles());
-		localResults.setUnknownCount(results.getUnknownCount());
+		//localResults.setUnknownCount(results.getUnknownCount());
 		
 		return localResults;
 	}

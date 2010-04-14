@@ -32,8 +32,8 @@ import com.google.gwt.user.client.ui.Widget;
 /**
  * Content panel.
  * 
- * @author <a href="mailto:christophe.bouthier@loria.fr">Christophe Bouthier</a>
- * @date 07 January 2010
+ * @author Huihui Yang <yhh.ruoya@gmail.com>
+ * @date 14 April 2010
  */
 public class ContentView extends Composite {
 

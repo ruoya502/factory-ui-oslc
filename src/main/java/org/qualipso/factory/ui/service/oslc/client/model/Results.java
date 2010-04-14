@@ -4,17 +4,18 @@ import java.io.Serializable;
 
 /**
  * 
- * @author Huihui Yang
+ * @author Huihui Yang <yhh.ruoya@gmail.com>
+ * @date 14 April 2010
  * 
- *
  */
 public class Results implements Serializable{
 
     private static final long serialVersionUID = 1L;
     private int srcCount;
-    private int licensesCount;
-    private int unknownCount;
-    private int disLicensesCount;
+    private int licenseFileCount;
+   // private int uncertainLicensesFileCount;
+   // private int unLicensedFileCount;
+    private int distinctLicensesCount;
     private int confRefCount; 
     private int confGblCount;
     private int allCount;
@@ -22,7 +23,19 @@ public class Results implements Serializable{
     private int copyRightedFiles;
     
    
-    //private String allFilesArray;
+//    public int getUncertainLicensesFileCount() {
+//		return uncertainLicensesFileCount;
+//	}
+//	public void setUncertainLicensesFileCount(int uncertainLicensesFileCount) {
+//		this.uncertainLicensesFileCount = uncertainLicensesFileCount;
+//	}
+//	public int getUnLicensedFileCount() {
+//		return unLicensedFileCount;
+//	}
+//	public void setUnLicensedFileCount(int unLicensedFileCount) {
+//		this.unLicensedFileCount = unLicensedFileCount;
+//	}
+	//private String allFilesArray;
     private String conflictingFiles;
    // private String LicensedFiles;
     private String UncertainLicensesFiles;
@@ -33,23 +46,23 @@ public class Results implements Serializable{
 	public void setSrcCount(int srcCount) {
 		this.srcCount = srcCount;
 	}
-	public int getLicensesCount() {
-		return licensesCount;
+	public int getLicenseFileCount() {
+		return licenseFileCount;
 	}
-	public void setLicensesCount(int licensesCount) {
-		this.licensesCount = licensesCount;
+	public void setLicenseFileCount(int licensesCount) {
+		this.licenseFileCount = licensesCount;
 	}
-	public int getUnknownCount() {
-		return unknownCount;
-	}
-	public void setUnknownCount(int unknownCount) {
-		this.unknownCount = unknownCount;
-	}
+//	public int getUnknownCount() {
+//		return unknownCount;
+//	}
+//	public void setUnknownCount(int unknownCount) {
+//		this.unknownCount = unknownCount;
+//	}
 	public int getDisLicensesCount() {
-		return disLicensesCount;
+		return distinctLicensesCount;
 	}
 	public void setDisLicensesCount(int disLicensesCount) {
-		this.disLicensesCount = disLicensesCount;
+		this.distinctLicensesCount = disLicensesCount;
 	}
 	public int getConfRefCount() {
 		return confRefCount;
@@ -103,4 +116,3 @@ public class Results implements Serializable{
 
     
 }
-

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!--
-		Authors Jerome Blanchard <jayblanc@gmail.com> - Christophe Bouthier <christophe.bouthier@loria.fr>
-		Date 6 November 2009
+		Authors Huihui Yang <yhh.ruoya@gmail.com> 
+		Date 14 April 2010
 	-->
 <web-fragment>
 	<name>FactoryUiServiceOSLC</name>

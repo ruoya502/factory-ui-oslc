@@ -3,8 +3,8 @@ package org.qualipso.factory.ui.service.oslc.client.iserver;
 import com.google.gwt.user.client.rpc.IsSerializable;
 
 /**
- * @author Jerome Blanchard <jayblanc@gmail.com>
- * @date 29 january 2010
+ * @author Huihui Yang <yhh.ruoya@gmail.com>
+ * @date 14 April 2010
  */
 public class OSLCServletException extends Exception implements IsSerializable {
 

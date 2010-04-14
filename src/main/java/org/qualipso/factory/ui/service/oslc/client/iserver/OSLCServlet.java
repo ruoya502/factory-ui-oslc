@@ -29,8 +29,8 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 /**
  * Interface of the server part for the OSLC service.
  * 
- * @author Jerome Blanchard <jayblanc@gmail.com>
- * @date 10 december 2009
+ * @author Huihui Yang <yhh.ruoya@gmail.com>
+ * @date 14 April 2010
  */
 @RemoteServiceRelativePath("oslc")
 public interface OSLCServlet extends RpcService {

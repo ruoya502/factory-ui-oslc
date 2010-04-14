@@ -28,10 +28,10 @@ import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.ImageResource;
 
 /**
- * Project resources.
+ * OSLC resources.
  * 
- * @author Jerome Blanchard <jayblanc@gmail.com>
- * @date 16 December 2009
+ * @author Huihui Yang <yhh.ruoya@gmail.com>
+ * @date 14 April 2010
  */
 public interface OSLCResources extends ClientBundle {
 
