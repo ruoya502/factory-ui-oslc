@@ -148,4 +148,12 @@ public interface Style extends CssResource {
     String errorcontrol();
     
     String tabPanel();
+    
+    String numberLabel();
+    
+    String numberText();
+    
+    String tabLayoutPanel();
+    
+    String tabLayoutPanelContent();
 }

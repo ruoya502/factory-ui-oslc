@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://google-web-toolkit.googlecode.com/files/xhtml.ent">
+	<!--
+		Authors Huihui Yang <yhh.ruoya@gmail.com> 
+		Date 14 April 2010
+	-->
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	
+	<ui:with field='resources' type='org.qualipso.factory.ui.service.oslc.client.resources.OSLCResources' />
+	
+	<g:FlowPanel styleName='{resources.style.bodybox}'>
+	<g:Label ui:field="newProjectLoadingLabel" styleName="{resources.style.loading}"/>
+		<g:FlowPanel styleName='{resources.style.headbox}'>
+			<g:Label ui:field="newProjectTitleLabel" styleName='{resources.style.title} {resources.style.iconProject}'>Results :</g:Label>
+		</g:FlowPanel>
+		<g:FlowPanel >
+			<g:TabLayoutPanel ui:field="tabPanel"  barUnit='PX'  barHeight="60" width="600px" height="450px" >
+  				<g:tab>
+    				<g:customHeader size='14'>
+      					<g:Label>Overview</g:Label>
+    				</g:customHeader>
+    				<!--  <g:TextArea ui:field="numbersDisplay" styleName='{resources.style.textarea} {resources.style.fielddata}'></g:TextArea> -->
+  					<g:FlowPanel> 
+  						<g:FlowPanel>
+  							<g:Label ui:field="allFiles" styleName='{resources.style.fieldlabel} {resources.style.iconRequired} {resources.style.fieldlabelrequired}'>All Files            :</g:Label>
+						 	<g:TextBox ui:field="allFilesText" styleName='{resources.style.fieldsmall} {resources.style.fielddata}'></g:TextBox> 
+  						</g:FlowPanel>
+  						<g:FlowPanel >
+  							<g:Label ui:field="sourceFiles"  styleName='{resources.style.fieldlabel} {resources.style.iconRequired} {resources.style.fieldlabelrequired}'>Source files         :</g:Label>
+						 	<!--<g:TextBox ui:field="sourceFiles" styleName='{resources.style.fieldsmall} {resources.style.fielddata}'></g:TextBox> -->
+  						</g:FlowPanel>
+  						<g:FlowPanel>
+  							<g:Label ui:field="distinctLicenses" styleName='{resources.style.fieldlabel} {resources.style.iconRequired} {resources.style.fieldlabelrequired}'>Distinct licenses    :</g:Label>
+						 	<!--<g:TextBox ui:field="distinctLicenses" styleName='{resources.style.fieldsmall} {resources.style.fielddata}'></g:TextBox> -->
+  						</g:FlowPanel>
+  						<g:FlowPanel>
+  							<g:Label ui:field="conflictsReference" styleName='{resources.style.fieldlabel} {resources.style.iconRequired} {resources.style.fieldlabelrequired}'>Conflicts (reference):</g:Label>
+						 	<!--<g:TextBox ui:field="conflictsReference" styleName='{resources.style.fieldnormal} {resources.style.fielddata}'></g:TextBox> -->
+  						</g:FlowPanel>
+  						
+  						<g:FlowPanel>
+  							<g:Label ui:field="conflictsGlobal" styleName='{resources.style.fieldlabel} {resources.style.iconRequired} {resources.style.fieldlabelrequired}'>Conflicts (global)   :</g:Label>
+						 	<!-- <g:TextBox ui:field="conflictsGlobal" styleName='{resources.style.fieldnormal} {resources.style.fielddata}'></g:TextBox> --> 
+  						</g:FlowPanel>
+  						<g:FlowPanel>
+  							<g:Label ui:field="copyrightHolders" styleName='{resources.style.fieldlabel} {resources.style.iconRequired} {resources.style.fieldlabelrequired}'>Copyright holders    :</g:Label>
+						 	<!-- <g:TextBox ui:field="copyrightHolders" styleName='{resources.style.fieldnormal} {resources.style.fielddata}'></g:TextBox> -->
+  						</g:FlowPanel>
+  						<g:FlowPanel>
+  							<g:Label ui:field="copyrightedFiles" styleName='{resources.style.fieldlabel} {resources.style.iconRequired} {resources.style.fieldlabelrequired}'>Copyrighted files    :</g:Label>
+						 	<!--  <g:TextBox ui:field="copyrightedFiles" styleName='{resources.style.fieldnormal} {resources.style.fielddata}'></g:TextBox>-->
+  						</g:FlowPanel>
+  					</g:FlowPanel>
+  				</g:tab>
+  				<g:tab>
+    				<g:customHeader size='14'>
+      					<g:Label>Conflicting files</g:Label>
+    				</g:customHeader>
+    				<g:ScrollPanel ui:field="scrolPanelConflictingFiles">
+    					<!-- <g:Grid  borderWidth="1" ui:field="ConflictingFiles" width="600px"></g:Grid> -->
+  					</g:ScrollPanel>
+  				</g:tab>
+  				<g:tab>
+    				<g:customHeader size='14'>
+      					<g:Label>Uncertain licenses files</g:Label>
+    				</g:customHeader>
+    				<g:ScrollPanel ui:field="scrolPanelUncertainLicensesFiles">
+    					<!-- <g:Grid  borderWidth="1"  cellSpacing="1" ui:field="UncertainLicensesFiles" width="600px" ></g:Grid> -->
+    				</g:ScrollPanel>		
+  				</g:tab>
+  				<g:tab>
+    				<g:customHeader size='14'>
+      					<g:Label>Unlicensed files</g:Label>
+    				</g:customHeader>
+    				<g:ScrollPanel ui:field="scrolPanelMissingLicenseFiles">
+    					<!--  <g:Grid  borderWidth="1" cellPadding="1" cellSpacing="1" ui:field="MissingLicenseFiles" width="600px"></g:Grid>-->
+  					</g:ScrollPanel>
+  				</g:tab>
+ 			</g:TabLayoutPanel>
+		</g:FlowPanel>
+		<g:Button ui:field="backButton">Back</g:Button>
+	</g:FlowPanel>
+</ui:UiBinder> 

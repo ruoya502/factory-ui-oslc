@@ -9,7 +9,7 @@
 	<ui:with field='resources' type='org.qualipso.factory.ui.service.oslc.client.resources.OSLCResources' />
 	
 	<g:FlowPanel styleName='{resources.style.bodybox}'>
-		<g:Label ui:field="newProjectLoadingLabel" styleName="{resources.style.loading}"/>
+		<g:Label ui:field="newProjectLoadingLabel" styleName='{resources.style.loading} {resources.style.iconLoader}'/>
 		<g:FlowPanel styleName='{resources.style.headbox}'>
 			<g:Label ui:field="newProjectTitleLabel" styleName='{resources.style.title} {resources.style.iconProject}'>IPR tracking with Open Source License Checker</g:Label>
 		</g:FlowPanel>

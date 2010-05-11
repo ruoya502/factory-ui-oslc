@@ -90,6 +90,7 @@ public class CreateOSLCCheckerView extends Composite {
 		initWidget(uiBinder.createAndBindUi(this));
 		resources.style().ensureInjected();
 		this.presenter = presenter;
+		newProjectLoadingLabel.setVisible(false);
 		newProjectMessageLabel.setVisible(false);	
 	}
 
@@ -124,50 +125,29 @@ public class CreateOSLCCheckerView extends Composite {
 	}
 	
 	public void startLoading() {
-		newProjectLoadingLabel.addStyleName(resources.style().iconLoader());
+		newProjectLoadingLabel.setVisible(true);
 	}
 	
 	public void stopLoading() {
-		newProjectLoadingLabel.removeStyleName(resources.style().iconLoader());
+		newProjectLoadingLabel.setVisible(false);
 	}
 	
-	
-	private Timer suggestPathTimer = new Timer() {
-		@Override
-		public void run() {
-			presenter.suggestPathFromName(newUserNameTextBox.getValue());
-		};
-	};
-
-
-	//Events handling
-//	@UiHandler("newSVNPathTextBox")
-//	void onPathKeyPressed(KeyUpEvent event) {
-//		//checkFreePathTimer.cancel();
-//		if (!newSVNPathTextBox.getValue().equals("")) {
-//			presenter.checkIfPathIsValid(newSVNPathTextBox.getValue());
-//			//checkFreePathTimer.schedule(1200);
-//		} else {
-//			setSVNPathLabelMessage("");
-//			//resetSVNPathLabelStyle();
-//		}
-//	}
-
-	@UiHandler("newUserNameTextBox")
-	void onNameKeyPressed(KeyUpEvent event) {
-		//GWT.log("key Predded! ", null);
-		suggestPathTimer.cancel();
-		if (!newUserNameTextBox.getValue().equals("") && newSVNPathTextBox.getValue().equals("")) {
-			suggestPathTimer.schedule(1200);
-		}
-	}
-
 	@UiHandler("OSLCButton")
 	void onOSLCClick(ClickEvent e) {
 		GWT.log("Create Click! ", null);
-		presenter.getLicensesResult(newSVNPathTextBox.getValue(), newUserNameTextBox.getValue(), newPWDTextBox.getValue());
+		if(!isVaildParameter()){
+			displayMessage("Please Input the SVN Path!");
+			newSVNPathTextBox.setFocus(true);
+		}
+		else
+			presenter.getLicensesResult(newSVNPathTextBox.getValue(), newUserNameTextBox.getValue(), newPWDTextBox.getValue());
 	}
 
+	boolean isVaildParameter(){
+		if(newSVNPathTextBox.getValue().length() == 0)
+			return false;
+		return true;
+	}
 	//External js effects	
 	private final native void blindDown(Element element) /*-{
 		new $wnd.Effect.BlindDown(element, {duration : 0.6});

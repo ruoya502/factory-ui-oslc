@@ -38,6 +38,7 @@ import org.qualipso.factory.ui.shared.OpenParts.client.annotations.OPViewFactory
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -113,11 +114,12 @@ public class OSLCPresenter implements EntryPoint {
             @Override
             public void onFailure(Throwable ex) {
             	 GWT.log("Error!", null);
-            	OSLCView.stopLoading();
-            	OSLCView.displayMessage(ex.getMessage());
+            	 OSLCView.displayMessage("Failed to Connect with WebService!");
+            	 OSLCView.stopLoading();
+            	 OSLCView.displayMessage(ex.getMessage());
             }
         });
-    	return null;
+		return null;
     }
 
     public void showErrorPopup(String message, String trace) {
@@ -141,27 +143,11 @@ public class OSLCPresenter implements EntryPoint {
     public void centerErrorPopup() {
         popup.center();
     }
-
-
-//    public void checkIfPathIsValid(String path) {
-//        if (!path.matches("[a-zA-Z0-9\\-_.~=:&+$,]+")) {
-//        	OSLCView.setSVNPathLabelMessage("wrong characters");
-//        	OSLCView.setSVNPathLabelWrongStyle();
-//        } else {
-//        	OSLCView.setSVNPathLabelMessage("good");
-//        	OSLCView.setSVNPathLabelGoodStyle();
-//        }
-//    }
     
     public String getParentPath(String path) {
         return path.substring(0, path.lastIndexOf('/'));
     }
 
-    public void suggestPathFromName(String name) {
-        if (!name.equals("")) {
-        	OSLCView.setSVNPathTextBoxValue(name.toLowerCase().replaceAll("\\W", ""));
-        }
-    }
     
     public void loadDisplayData(Results results){
     	paddingTextArea(results);
@@ -169,15 +155,14 @@ public class OSLCPresenter implements EntryPoint {
     }
     
     public void paddingTextArea(Results results){
-    	String contents = "All files: "+results.getAllCount();
-    	contents += "\n" + "Source files: "+results.getSrcCount();
-    	contents += "\n" + "Distinct licenses: "+results.getDisLicensesCount();
-    	contents += "\n" + "Conflicts (reference): "+results.getConfRefCount();
-    	contents += "\n" + "Conflicts (global): "+results.getConfGblCount();
-    	contents += "\n" + "Copyright holders: "+results.getCopyRightHolders();
-    	contents += "\n" + "Copyrighted files: "+results.getCopyRightedFiles();
     	
-    	displayResultsView.setNumbersDisplayValue(contents);
+        displayResultsView.setAllFilesText(""+results.getAllCount());
+        displayResultsView.setSourceFilesText(""+results.getSrcCount());
+        displayResultsView.setDistinctLicensesText(""+results.getDisLicensesCount());
+        displayResultsView.setConflictsReferenceText(""+results.getConfRefCount());
+        displayResultsView.setConflictsGlobalText(""+results.getConfGblCount());
+        displayResultsView.setCopyrightedFilesText(""+results.getCopyRightedFiles());
+        displayResultsView.setCopyrightHoldersText(""+results.getCopyRightHolders());
     }
     /**
      * 
@@ -186,24 +171,44 @@ public class OSLCPresenter implements EntryPoint {
      */
     public void paddingGrid(Results results){
     	String files1 = results.getConflictingFiles();
-    	String[] filePath1 = files1.split(",");
-    	for(int i = 0;i < filePath1.length;i ++){
-    		String path = filePath1[i];
-    		displayResultsView.InsertConflictingFiles(path);
+    	if(files1.length() != 0){
+    		String[] filePath1 = files1.split(",");
+    		displayResultsView.getConflictingFiles().setWidget(0, 0,new HTML("name"));
+    		displayResultsView.getConflictingFiles().setWidget(0, 1,new HTML("path"));
+    		displayResultsView.getScrolPanelConflictingFiles().remove(displayResultsView.getInfo3());
+    		displayResultsView.getScrolPanelConflictingFiles().add(displayResultsView.getConflictingFiles());
+    		
+    		for(int i = 0;i < filePath1.length;i ++){
+        		String path = filePath1[i];
+        		displayResultsView.InsertConflictingFiles(path);
+        	}
     	}
-   
+    	
     	String files2 = results.getUncertainLicensesFiles();
-    	String[] filePath2 = files2.split(",");
-    	for(int i = 0;i < filePath2.length;i ++){
-    		String path = filePath2[i];
-    		displayResultsView.InsertUncertainLicensesFiles(path);
+    	if(files2.length() != 0){
+    		String[] filePath2 = files2.split(",");
+    		displayResultsView.getUncertainLicensesFiles().setWidget(0, 0,new HTML("name"));
+    		displayResultsView.getUncertainLicensesFiles().setWidget(0, 1,new HTML("path"));
+    		
+    		displayResultsView.getScrolPanelUncertainLicensesFiles().remove(displayResultsView.getInfo2());
+    		displayResultsView.getScrolPanelUncertainLicensesFiles().add(displayResultsView.getUncertainLicensesFiles());
+    		for(int i = 0;i < filePath2.length;i ++){
+        		String path = filePath2[i];
+        		displayResultsView.InsertUncertainLicensesFiles(path);
+        	}
     	}
     	
     	String files3 = results.getMissingLicenseFiles();
-    	String[] filePath3 = files3.split(",");
-    	for(int i = 0;i < filePath3.length;i ++){
-    		String path = filePath3[i];
-    		displayResultsView.InsertMissingLicenseFiles(path);
+    	if(files3.length() != 0){
+    		String[] filePath3 = files3.split(",");
+    		displayResultsView.getMissingLicenseFiles().setWidget(0, 0,new HTML("name"));
+    		displayResultsView.getMissingLicenseFiles().setWidget(0, 1,new HTML("path"));
+    		displayResultsView.getScrolPanelMissingLicenseFiles().remove(displayResultsView.getInfo1());
+    		displayResultsView.getScrolPanelMissingLicenseFiles().add(displayResultsView.getMissingLicenseFiles());
+    		for(int i = 0;i < filePath3.length;i ++){
+        		String path = filePath3[i];
+        		displayResultsView.InsertMissingLicenseFiles(path);
+        	}
     	}
     }
 }

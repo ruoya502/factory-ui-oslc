@@ -93,7 +93,8 @@
 }
 
 .loading {
-    float: right;
+    float: left;
+    width:40px;
 }
 
 .label {
@@ -350,6 +351,37 @@
 .tabPanel{
     margin: 10px; 
     color: #333333;
+    border-style:none;
 }
+
+.numberLabel{
+	text-align: left;
+    font-weight: bold;
+    color: #333333;
+    margin-top: 3px;
+	float:left;
+	width:200px;
+	clear:left;
 }
+
+.numberText{
+    color: #333333;
+	width:100px;
+	border:0px;
+	heigth:30px;
+	margin-top:10px;
+}
+
+.tabLayoutPanelContent{
+	color:#333333;
+	text-align:center;
+	border:sold;
+}
+
+.tabLayoutPanel{
+	text-align:center;
+	color:#333333;
+}
+
+	
 
